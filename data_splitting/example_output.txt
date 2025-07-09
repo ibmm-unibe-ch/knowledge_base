@@ -1,0 +1,58 @@
+
+##### Cluster Sequences #####
+
+[Step 1] Creating database from input sequences...
+[Step 2] Creating index file for the database...
+[Step 3] Running MMseqs2 search for sequence clustering...
+[Step 4] Converting results to human-readable alignment format...
+[Done] Alignment results saved to /data/jgut/BLOSUM_distance/esm_decoding/data/splits/Splitting/pident_40_cluster.tsv
+Read /data/jgut/BLOSUM_distance/esm_decoding/data/all_seqs.csv
+Read as csv
+Pident Ranges for the histogram: [20, 30, 40, 50, 60, 70, 80, 90]
+
+
+--INFO: Excluding sequences more similar than 90% identity...
+Total number of sequences:  111925
+Total number of sequences after removing sequences with over 90% identity:  57097
+
+
+--INFO: Excluding sequences shorter than 20 amino acids...
+Total number of sequences after removing sequences shorter than 20 amino acids:  56821
+
+
+--INFO: Clustering sequences at 40% identity...
+##### CHECKING OVERLAP BETWEEN DATASETS #####
+====================================================================================
+[INFO] Running MMseqs2 search between:
+       Query : /data/jgut/BLOSUM_distance/esm_decoding/data/splits/Splitting/SanityCheck/test/db
+       Target: /data/jgut/BLOSUM_distance/esm_decoding/data/splits/Splitting/SanityCheck/val/db
+====================================================================================
+[RESULT] Sequences with identity > 30%: 871
+[RESULT] Sequences with identity > 50%: 8
+====================================================================================
+[INFO] Running MMseqs2 search between:
+       Query : /data/jgut/BLOSUM_distance/esm_decoding/data/splits/Splitting/SanityCheck/train/db
+       Target: /data/jgut/BLOSUM_distance/esm_decoding/data/splits/Splitting/SanityCheck/val/db
+====================================================================================
+[RESULT] Sequences with identity > 30%: 2143
+[RESULT] Sequences with identity > 50%: 39
+====================================================================================
+[INFO] Running MMseqs2 search between:
+       Query : /data/jgut/BLOSUM_distance/esm_decoding/data/splits/Splitting/SanityCheck/test/db
+       Target: /data/jgut/BLOSUM_distance/esm_decoding/data/splits/Splitting/SanityCheck/train/db
+====================================================================================
+[RESULT] Sequences with identity > 30%: 7997
+[RESULT] Sequences with identity > 50%: 2
+##### All comparisons complete. #####
+
+
+--INFO: Splitting into training, validation, and test sets...
+Size of the training set is:  45456
+Size of the validation set is:  5682
+Size of the test set is:  5683
+
+
+--INFO: Performing splits sanity check...
+Save split to /data/jgut/BLOSUM_distance/esm_decoding/data/splits/Output/training.fasta
+Save split to /data/jgut/BLOSUM_distance/esm_decoding/data/splits/Output/validation.fasta
+Save split to /data/jgut/BLOSUM_distance/esm_decoding/data/splits/Output/test.fasta
