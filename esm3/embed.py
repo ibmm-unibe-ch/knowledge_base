@@ -85,8 +85,8 @@ def read_fasta(fasta_paths: List[Path], sequence_amount: Optional[int] = 1) -> D
         with open(fasta_path, 'r') as f:
             seq_id: Optional[str] = None
             seq_lines: List[str] = []
-            
-            for line in f:
+            lines = list(f.readlines())
+            for line in lines:
                 line = line.strip()
                 if not line:
                     continue
