@@ -52,11 +52,30 @@ required_cols = {"Protein_ID", "Sequence"}
 if not required_cols.issubset(df.columns):
     raise ValueError(f"Input CSV must contain columns: {required_cols}")
 
-# Add Ligand column if missing
+# Add Ligand column if missing and normalize Ligand column
 if "Ligand" not in df.columns:
     df["Ligand"] = ""
 else:
-    df["Ligand"] = df["Ligand"].fillna("").astype(str)
+    df["Ligand"] = (
+    df["Ligand"]
+    .fillna("")
+    .astype(str)
+    .str.strip()
+    .replace(
+        {
+            "None": "",
+            "none": "",
+            "NULL": "",
+            "null": "",
+            "NA": "",
+            "N/A": "",
+            "n/a": "",
+            "Nan": "",
+            "NaN": "",
+        }
+    )
+)
+
 
 print(f"✅ Loaded {len(df)} sequences from {args.input_csv}")
 
