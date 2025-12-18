@@ -138,7 +138,7 @@ python run_inference.py \
 | ------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `--job-name="chai_test"` | Name of the job displayed in the scheduler.                                                                                                                            |
 | `--time=01:00:00`        | Maximum runtime for the job (HH:MM:SS).                                                                                                                                |
-| `--partition=gpu-invest` | Partition (queue) to submit the job. Use `gpu` or `gpu-invest` for standard GPU jobs.                                                                                  |
+| `--partition=gpu` | Partition (queue) to submit the job. Use `gpu` or `gpu-invest` for standard GPU jobs.                                                                                  |
 | `--qos=job_gpu_preemptable`   | Quality of Service. If partition=`gpu-invest`, use `job_gpu_preemptable` for preemptable jobs. If partition=`gpu`, use `job_gpu`.                                      |
 | `--gres=gpu:h100:2`      | Requests 2 GPUs of type `h100`. Adjust based on GPU type and availability.                                                                                             |
 | `--mem-per-gpu=90G`      | Allocates 90 GB RAM per GPU. Adjust depending on dataset size and GPU memory.                                                                                          |
