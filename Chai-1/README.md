@@ -99,6 +99,62 @@ python run_inference.py \
 | `--use_esm_embeddings` | Boolean flag to use ESM embeddings as input features. Helps improve folding accuracy. | `True` |
 | `--seed` | Random seed for reproducibility of results. | `42` |
 
+<table>
+  <thead>
+    <tr>
+      <th style="width: 180px; white-space: nowrap;">Argument</th>
+      <th>Description</th>
+      <th>Example / Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>--input_csv</code></td>
+      <td>Path to your input CSV file containing sequences to fold. The CSV must have the columns: <code>Protein_ID</code>, <code>Sequence</code>, <code>Ligand</code>. If no ligand is present, use <code>None</code>.</td>
+      <td><code>sequences.csv</code></td>
+    </tr>
+    <tr>
+      <td><code>--output_dir</code></td>
+      <td>Directory where all Chai-1 outputs will be saved. Each protein gets its own subfolder containing all predicted structures.</td>
+      <td><code>results_chai</code></td>
+    </tr>
+    <tr>
+      <td><code>--summary_csv</code></td>
+      <td>CSV file where a summary of predictions (e.g., pLDDT scores, confidence metrics) will be stored.</td>
+      <td><code>results_chai/summary.csv</code></td>
+    </tr>
+    <tr>
+      <td><code>--batch_size</code></td>
+      <td>Number of sequences to process per GPU at a time. Useful to balance memory and throughput.</td>
+      <td><code>4</code></td>
+    </tr>
+    <tr>
+      <td><code>--gpus</code></td>
+      <td>List of GPU device indices to use. If not provided, the script will use all available GPUs.</td>
+      <td><code>0 1 2</code></td>
+    </tr>
+    <tr>
+      <td><code>--num_trunk_recycles</code></td>
+      <td>Number of trunk recycles in Chai-1 for structural refinement. Higher values may improve accuracy but increase runtime.</td>
+      <td><code>3</code></td>
+    </tr>
+    <tr>
+      <td><code>--num_diffn_timesteps</code></td>
+      <td>Number of diffusion timesteps in Chai-1. Determines how thoroughly the model explores conformations.</td>
+      <td><code>200</code></td>
+    </tr>
+    <tr>
+      <td><code>--use_esm_embeddings</code></td>
+      <td>Boolean flag to use ESM embeddings as input features. Helps improve folding accuracy.</td>
+      <td><code>True</code></td>
+    </tr>
+    <tr>
+      <td><code>--seed</code></td>
+      <td>Random seed for reproducibility of results.</td>
+      <td><code>42</code></td>
+    </tr>
+  </tbody>
+</table>
 
 This command will:
 
