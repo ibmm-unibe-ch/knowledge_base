@@ -47,7 +47,7 @@ parser.add_argument("--seed", type=int, default=42,
 args = parser.parse_args()
 
 # --- Input handling ---
-df = pd.read_csv(args.input_csv)
+df = pd.read_csv(args.input_csv, keep_default_na=False, na_filter=False)
 required_cols = {"Protein_ID", "Sequence"}
 if not required_cols.issubset(df.columns):
     raise ValueError(f"Input CSV must contain columns: {required_cols}")
@@ -55,6 +55,8 @@ if not required_cols.issubset(df.columns):
 # Add Ligand column if missing
 if "Ligand" not in df.columns:
     df["Ligand"] = ""
+else:
+    df["Ligand"] = df["Ligand"].fillna("").astype(str)
 
 print(f"✅ Loaded {len(df)} sequences from {args.input_csv}")
 
