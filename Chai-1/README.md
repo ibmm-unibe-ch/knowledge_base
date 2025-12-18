@@ -134,7 +134,7 @@ python run_inference.py \
     --batch_size 2
 ```
 
-| Flag                         | Description                                                                                                                                                            |
+| Flag                                 | Description                                                                                                                                                            |
 | ------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `--job-name="chai_test"` | Name of the job displayed in the scheduler.                                                                                                                            |
 | `--time=01:00:00`        | Maximum runtime for the job (HH:MM:SS).                                                                                                                                |
