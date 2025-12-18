@@ -89,7 +89,7 @@ python run_inference.py \
 
 | Argument | Description | Example / Notes |
 |----------|-------------|----------------|
-| `--input_csv` | Path to your input CSV file containing sequences to fold. The CSV must have the columns: `Protein_ID`, `Sequence`, `Ligand`. If no ligand is present, use `None`. | `sequences.csv` |
+| `--input_csv` | Path to your input CSV file with sequences to fold. The CSV must have the columns: `Protein_ID`, `Sequence`, `Ligand`. If no ligand is present, use `None`. |`sequences.csv` |
 | `--output_dir` | Directory where all Chai-1 outputs will be saved. Each protein gets its own subfolder containing all predicted structures. | `results_chai` |
 | `--summary_csv` | CSV file where a summary of predictions (e.g., pLDDT scores, confidence metrics) will be stored. | `results_chai/summary.csv` |
 | `--batch_size` | Number of sequences to process per GPU at a time. Useful to balance memory and throughput. | `4` |
