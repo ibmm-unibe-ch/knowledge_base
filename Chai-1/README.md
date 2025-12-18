@@ -102,7 +102,7 @@ python run_inference.py \
 <table>
   <thead>
     <tr>
-      <th style="width: 180px; white-space: nowrap;">Argument</th>
+      <th style="width: 230px; white-space: nowrap;">Argument</th>
       <th>Description</th>
       <th>Example / Notes</th>
     </tr>
